@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DocuForge Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<button class="logout" onclick="logout()">Logout</button>
+
+<div class="container">
+
+    <h1>⚖️ DocuForge</h1>
+    <p class="subtitle">Generate Legal Documents Instantly</p>
+
+    <div class="card">
+
+        <div class="grid">
+            <input id="owner" placeholder="Owner Name">
+            <input id="tenant" placeholder="Second Party Name">
+            <input id="address" placeholder="Property Address">
+            <input id="rent" placeholder="Rent Amount">
+            <input id="duration" placeholder="Duration (months)">
+        </div>
+
+        <select id="doc_type">
+            <option value="rental">📄 Rental Agreement</option>
+            <option value="nda">🔒 NDA</option>
+            <option value="affidavit">📝 Affidavit</option>
+        </select>
+
+        <select id="language">
+            <option value="English">🇬🇧 English</option>
+            <option value="Hindi">🇮🇳 Hindi</option>
+            <option value="Marathi">🇮🇳 Marathi</option>
+        </select>
+
+        <div>
+            <button onclick="generateDoc()">Generate</button>
+            <button onclick="downloadPDF()">Download PDF</button>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <h3>📄 Generated Document</h3>
+        <div id="output" class="output"></div>
+    </div>
+
+</div>
+
+<!-- LOADER -->
+<div id="loaderOverlay" class="loader-overlay hidden">
+    <div class="spinner"></div>
+    <p>Generating document...</p>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
